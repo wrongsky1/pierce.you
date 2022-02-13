@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Variables */
+:root {
+    --basic-black: #000000;
+    --basic-white: #ffffff;
+    /* --basic-grey: #DBE2EF;
+    --basic-blue: #3F72AF; */
+    --basic-green: #bdcdcc;
+    --basic-dark-green: #a6b4b4;
+    --basic-peach: #e3cbc3;
+    --basic-peach-dark: #d4b4aa;
+    --basic-light: #f1f1f1;
+    --basic-dark: #2a383b;
+    --basic-activ: #2a383b;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--basic-light);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin: 10px 0;
+}
+
+.header__logo {
+    width: 200px;
+    height: 200px;
+}
+
+.header__active {
+    background: var(--basic-activ);
+}
+
+.header__logo-link {
+    width: 200px;
+    height: 200px;
+}
+
+.header__logo-pic {
+    width: 200px;
+    height: 200px;
+}
+
+.main {
+    width: 100%;
+}
+
+.links-nav {
+    width: 100%;
+}
+
+.links-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.links-item {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin: 25px auto;
+    width: 80%;
+    padding: 24px 72px;
+    font-size: 36px;
+    cursor: pointer;
+    background-color: var(--basic-peach-dark);
+    border: 0;
+    border-radius: 0px;
+    outline: none;
+    color: var(--basic-dark);
+    font-weight: bold;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    opacity: 0.7;
+}
+
+a.button:active, /* активная/посещенная ссылка */
+a.button:hover,  /* при наведении */
+a.button {
+    text-decoration: none;
+}
+
+.text {
+    text-decoration: none;
+    text-align: center;
+}
+.container {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    animation: scaleUp 1s forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(25);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .button {
+        margin: 15px auto;
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .button {
+        margin: 10px auto;
+        padding: 15px 40px;
+        font-size: 19px;
+    }
+}
+
+.contacts {
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts__section {
+    background-color: var(--basic-peach);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+}
+
+.contacts__title {
+    margin: 0;
+    margin-bottom: 50px;
+    color: var(--basic-dark);
+    text-align: center;
+    font-size: 32px;
+}
+
+.contacts__block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contacts__map {
+    width: 100%;
+}
+
+.contacts__map-yandex {
+    border: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .contacts__block {
+        flex-direction: column;
+    }
+
+    .contacts__info {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .contacts__map {
+        width: 100%;
+    }
+
+    .contacts__title {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+
+    .contacts__name {
+        margin-bottom: 20px;
+    }
+}
